@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  /* NAVBAR */
+  .rco-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .rco-navbar.glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .rco-navbar.solid {
+    background-color: #007BFF;
+    backdrop-filter: none;
+    border: none;
+  }
+  
+  .rco-nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  /* NAV LINKS DESKTOP */
+  .rco-nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+  }
+  
+  .rco-nav-links li a {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: #ffd900;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .rco-nav-links li a:hover {
+    color: white;
+  }
+  
+  /* HAMBURGER ICON */
+  .rco-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .rco-hamburger span {
+    background: white;
+    height: 3px;
+    border-radius: 2px;
+    width: 100%;
+    transition: 0.3s ease;
+  }
+  
+  .rco-hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .rco-hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .rco-hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+  
+  /* SIDEBAR */
+  .rco-sidebar-overlay {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 3px 0 6px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding: 2rem 1.5rem;
+  }
+  
+  .rco-sidebar-overlay.active {
+    left: 0;
+  }
+  
+  .rco-sidebar-overlay ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .rco-sidebar-overlay a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .rco-sidebar-overlay a:hover {
+    color: #007BFF;
+  }
+  
+  /* BACKDROP */
+  .rco-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 900;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .rco-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .rco-nav-links {
+      display: none;
+    }
+  
+    .rco-hamburger {
+      display: flex;
+    }
+  }
+  
+  .rco-nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .rco-logo-img {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+  }
+  
