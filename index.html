@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="RCO - Lavagens e Mecânica. Serviços de qualidade em lavagem e manutenção automotiva.">
+  <meta name="description"
+    content="RCO - Lavagens e Mecânica. Serviços de qualidade em lavagem e manutenção automotiva.">
   <meta name="keywords" content="lavagem, mecânica, automóveis, manutenção, carro, RCO">
   <meta name="author" content="RCO">
-  
+
   <title>RCO - Lavagens e Mecânica</title>
 
   <!-- Favicon -->
@@ -17,6 +18,7 @@
   <!-- CSS Styles -->
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/navbar.css">
+  <link rel="stylesheet" href="./css/galery.css">
 
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -27,7 +29,7 @@
 </head>
 
 <body>
-  
+
   <!-- NAVBAR -->
   <nav class="rco-navbar glass" id="rcoNavbar">
     <div class="rco-nav-logo">
@@ -42,8 +44,8 @@
     </div>
 
     <ul class="rco-nav-links" id="rcoNavLinks">
+      <li><a href="#galery"><i class="fas fa-tools"></i> Galeria</a></li>
       <li><a href="#servicos"><i class="fas fa-tools"></i> Serviços</a></li>
-      <li><a href="#precos"><i class="fas fa-tag"></i> Preços</a></li>
       <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
     </ul>
   </nav>
@@ -54,21 +56,19 @@
   <!-- SIDEBAR MOBILE -->
   <div class="rco-sidebar-overlay" id="rcoSidebarOverlay">
     <ul>
+      <li><a href="#galery"><i class="fas fa-tools"></i> Galeria</a></li>
       <li><a href="#servicos"><i class="fas fa-tools"></i> Serviços</a></li>
-      <li><a href="#precos"><i class="fas fa-tag"></i> Preços</a></li>
       <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
     </ul>
   </div>
-  
+
 
   <header class="hero">
-    
+
     <div class="hero-slider">
-      <div class="hero-slide active"
-        style="background-image: url('./img/header/background1.jpg');">
+      <div class="hero-slide active" style="background-image: url('./img/header/background1.jpg');">
       </div>
-      <div class="hero-slide"
-        style="background-image: url('./img/header/background2.jpg');">
+      <div class="hero-slide" style="background-image: url('./img/header/background2.jpg');">
       </div>
     </div>
     <div class="hero-content">
@@ -77,26 +77,37 @@
       <a href="#servicos" class="cta-btn">Ver Serviços</a>
     </div>
   </header>
-  
-  <section class="rco-gallery">
-    <h2>Galeria de Trabalhos</h2>
-    <div class="rco-gallery-grid">
-      <a href="./img/carros/PolirFarois.jpg" class="rco-gallery-item"><img src="./img/carros/PolirFarois.jpg" alt="Carro Lavado 1"></a>
-      <a href="carros/car2.jpg" class="rco-gallery-item"><img src="carros/car2_thumb.jpg" alt="Carro Lavado 2"></a>
-      <a href="servicos/service1.jpg" class="rco-gallery-item"><img src="servicos/service1_thumb.jpg" alt="Serviço 1"></a>
-      <a href="servicos/service2.jpg" class="rco-gallery-item"><img src="servicos/service2_thumb.jpg" alt="Serviço 2"></a>
-      <!-- adicione mais links/imagens aqui -->
+
+  <section class="pricing-section" style="background: #F2F9FF;" id="galery">
+    <h2 class="pricing-title">Trabalhos</h2>
+    <hr style="width: 50%; height: 2px; background-color: #007BFF;border: none; margin: 0 auto 40px;">
+    <div class="filters">
+      <div class="filter active" data-filter="all">Todas</div>
+      <div class="filter" data-filter="servicos">Serviços</div>
     </div>
-  
-    <!-- Lightbox Modal -->
-    <div id="rcoLightbox" class="rco-lightbox">
-      <span class="rco-lightbox-close">&times;</span>
-      <img class="rco-lightbox-img" src="" alt="Visualização da imagem">
-    </div>
+
+    <div class="gallery">
+      <div class="gallery-item show" data-category="servicos">
+        <img src="./img/carros/PolirFarois.jpg" alt="PolirFarois">
+      </div>
+
+      <div class="gallery-item show" data-category="servicos">
+        <img src="./img/carros/Pastilhas.jpg" alt="Pastilhas">
+      </div>
+
+      <div class="lightbox" id="lightbox">
+        <div class="lightbox-card">
+          <span class="lightbox-close" id="lightboxClose">&times;</span>
+          <span class="lightbox-arrow arrow-left" id="arrowLeft">&#10094;</span>
+          <img src="" alt="" id="lightboxImage">
+          <span class="lightbox-arrow arrow-right" id="arrowRight">&#10095;</span>
+        </div>
+      </div>
   </section>
 
-  <section class="pricing-section" id="servicos">
+  <section class="pricing-section" style="padding-bottom:  40px;" id="servicos">
     <h2 class="pricing-title">Serviços e Preços</h2>
+    <hr style="width: 50%; height: 2px; background-color: #007BFF;border: none; margin: 0 auto 40px;">
     <p class="warning-msg">
       ⚠️ Alguns serviços podem ter preço superior ao indicado.
       Carros com extrema sujidade serão avaliados sob orçamento.
@@ -170,7 +181,7 @@
   <div class="map-container">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d613.867859606024!2d-8.8910944!3d39.5883639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd18a1a4a932b1d5%3A0xedc09dbfa1288524!2sRCO%20Lavagens%20Auto!5e1!3m2!1spt-PT!2spt!4v1686948106430!5m2!1spt-PT!2spt"
-      width="100%" height="500" style="border:0; margin: 0;" allowfullscreen loading="lazy"
+      width="100%" height="500" style="border:0; margin: 0;margin-bottom: -7px;" allowfullscreen loading="lazy"
       referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </div>
@@ -192,7 +203,6 @@
   <footer>
     <p>&copy; 2025 RCO. Todos os direitos reservados.</p>
     <div class="social-icons">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/rco.lavagensauto/" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://wa.me/351913066636" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
@@ -202,6 +212,7 @@
   <!-- partial -->
   <script src="./js/script.js"></script>
   <script src="./js/navbar.js"></script>
+  <script src="./js/galery.js"></script>
 
 </body>
 
