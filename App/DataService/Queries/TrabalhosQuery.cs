@@ -96,9 +96,7 @@ namespace DataService.Queries
 							DataInicio = @DataInicio,
 							DataFinal = @DataFinal,
 							Notas = @Notas,
-							Confirmado = @Confirmado,
-							Pago = @Pago,
-							Finalizado = @Finalizado,
+							Estado = @Estado,
 							DataAtualizacao = @DataAtualizacao
 						WHERE Id = @Id;
 					";
@@ -113,11 +111,11 @@ namespace DataService.Queries
 					
 						INSERT INTO Trabalhos (
 							IdCliente, Ano, NumDoc, Duracao, Custo, DataInicio, DataFinal,
-							Notas, Confirmado, Pago, Finalizado, DataCriacao, DataAtualizacao
+							Notas, Estado, DataCriacao, DataAtualizacao
 						)
 						VALUES (
 							@IdCliente, @Ano, @NumDoc, @Duracao, @Custo, @DataInicio, @DataFinal,
-							@Notas, @Confirmado, @Pago, @Finalizado, @DataCriacao, @DataAtualizacao
+							@Notas, @Estado, @DataCriacao, @DataAtualizacao
 						);
 						SELECT last_insert_rowid();
 					

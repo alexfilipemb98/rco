@@ -1,4 +1,6 @@
-﻿using DevExpress.XtraEditors;
+﻿using DataService.Queries;
+using DevExpress.XtraEditors;
+using GestaoTrabalhos.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +18,18 @@ namespace GestaoTrabalhos.Views.Home.Calendario
 		public CalendarioView()
 		{
 			InitializeComponent();
+		}
+
+		private async void bbiReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+		{
+			try
+			{
+				agendaModelBindingSource.DataSource = await GeralQuery.GetAgenda();
+			}
+			catch (Exception ex)
+			{
+				AppHelper.ErrorHelper(ex);
+			}
 		}
 	}
 }

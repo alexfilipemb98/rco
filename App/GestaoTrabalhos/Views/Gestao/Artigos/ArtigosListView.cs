@@ -31,6 +31,8 @@ namespace GestaoTrabalhos.Views.Gestao.Artigos
 			}
 		}
 
+		#region CLICK
+
 		private async void bbiReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
 		{
 			try
@@ -108,6 +110,8 @@ namespace GestaoTrabalhos.Views.Gestao.Artigos
 
 		}
 
+		#endregion
+	
 		#region FUNCOES
 
 		internal async Task LoadData()

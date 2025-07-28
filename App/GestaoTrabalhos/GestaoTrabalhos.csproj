@@ -208,6 +208,7 @@
     <None Include="Properties\DataSources\DataService.Entities.LinhasTrabalhoServicosEntity.datasource" />
     <None Include="Properties\DataSources\DataService.Entities.ServicosEntity.datasource" />
     <None Include="Properties\DataSources\DataService.Entities.TrabalhosEntity.datasource" />
+    <None Include="Properties\DataSources\DataService.Models.AgendaModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

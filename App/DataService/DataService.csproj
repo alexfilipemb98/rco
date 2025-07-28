@@ -54,9 +54,11 @@
     <Compile Include="Enums\EstadosTrabalho.cs" />
     <Compile Include="Helpers\ConversoesHelper.cs" />
     <Compile Include="Helpers\DbHelper.cs" />
+    <Compile Include="Models\AgendaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\ArtigosQuery.cs" />
     <Compile Include="Queries\ClientesQuery.cs" />
+    <Compile Include="Queries\GeralQuery.cs" />
     <Compile Include="Queries\ServicosQuery.cs" />
     <Compile Include="Queries\TrabalhosQuery.cs" />
   </ItemGroup>

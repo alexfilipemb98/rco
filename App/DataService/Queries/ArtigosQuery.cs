@@ -20,6 +20,15 @@ namespace DataService.Queries
 			}
 		}
 
+		public static async Task<ArtigosEntity> DevolveArtigo(int Id)
+		{
+			using (DataSqlAccessBase _SQL = new DataSqlAccessBase(DbHelper.connectionString, true))
+			{
+				ArtigosEntity servico = await _SQL.GetValueAsync<ArtigosEntity, object>("Select * from Artigos where Id = @Id", new { Id });
+				return servico;
+			}
+		}
+
 		public static async Task<bool> SaveArtigo(ArtigosEntity artigo)
 		{
 			using (DataSqlAccessBase _SQL = new DataSqlAccessBase(DbHelper.connectionString, true))

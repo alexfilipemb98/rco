@@ -54,7 +54,7 @@ namespace GestaoTrabalhos.Views.Home.Trabalhos
 			}
 		}
 
-		private async void seAnoDocumento_EditValueChangedAsync(object sender, EventArgs e)
+		private async void seAnoDocumento_EditValueChanged(object sender, EventArgs e)
 		{
 			try
 			{
@@ -230,6 +230,9 @@ namespace GestaoTrabalhos.Views.Home.Trabalhos
 
 			_crtTrabalho.DataFinal = _crtTrabalho.DataInicio.AddMinutes(_crtTrabalho.Duracao);
 			deFinal.EditValue = _crtTrabalho.DataFinal;
+
+			lcgServicos.Text = $"Serviços - ({_crtTrabalho.Servicos.Count} | {totalPrecoSercicos:c2})";
+			lcgArtigo.Text = $"Artigos - ({_crtTrabalho.Artigos.Count} | {totalPrecoArtigos:c2})";
 		}
 
 
@@ -240,6 +243,37 @@ namespace GestaoTrabalhos.Views.Home.Trabalhos
 			if (int.TryParse(lueCliente.EditValue?.ToString(), out int id))
 			{
 				_crtTrabalho.IdCliente = id;
+			}
+		}
+
+		private void gvArtigos_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+		{
+			atualizaValoresCabecalho();
+		}
+
+		private async void repoArtigos_EditValueChanged(object sender, EventArgs e)
+		{
+			try
+			{
+
+				if (gvArtigos.GetRow(gvArtigos.FocusedRowHandle) is LinhasTrabalhoArtigosEntity artigos)
+				{
+					BaseEdit editor = sender as DevExpress.XtraEditors.BaseEdit;
+					if (editor != null)
+					{
+						int selectedValue = int.Parse(editor.EditValue?.ToString());
+
+						ArtigosEntity dbServico = await ArtigosQuery.DevolveArtigo(selectedValue);
+
+						artigos.Descricao = dbServico.Nome;
+						artigos.Preco = dbServico.PrecoUnit;
+
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				AppHelper.ErrorHelper(ex);
 			}
 		}
 	}
