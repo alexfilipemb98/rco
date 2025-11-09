@@ -17,16 +17,39 @@
 })();
 
 // Drawer
-(function () {
+(function(){
   const burger = document.getElementById('burger');
   const drawer = document.getElementById('drawer');
   const scrim = document.getElementById('scrim');
-  if (!burger || !drawer || !scrim) return;
-  const open = () => { drawer.classList.add('open'); scrim.classList.add('show'); burger.setAttribute('aria-expanded', 'true'); };
-  const close = () => { drawer.classList.remove('open'); scrim.classList.remove('show'); burger.setAttribute('aria-expanded', 'false'); };
-  burger.addEventListener('click', () => drawer.classList.contains('open') ? close() : open());
+  if(!burger || !drawer || !scrim) return;
+
+  const open = ()=>{
+    drawer.classList.add('open');
+    scrim.classList.add('show');
+    burger.setAttribute('aria-expanded','true');
+  };
+
+  const close = ()=>{
+    drawer.classList.remove('open');
+    scrim.classList.remove('show');
+    burger.setAttribute('aria-expanded','false');
+  };
+
+  // Toggle ao clicar no ícone
+  burger.addEventListener('click', ()=> drawer.classList.contains('open') ? close() : open());
+
+  // Fechar ao clicar fora
   scrim.addEventListener('click', close);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+
+  // Fechar ao carregar ESC
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
+
+  // 🔥 Fechar ao clicar num link do menu lateral
+  drawer.querySelectorAll('a').forEach(link=>{
+    link.addEventListener('click', ()=>{
+      close();
+    });
+  });
 })();
 
 // Tema (ícone simples)
