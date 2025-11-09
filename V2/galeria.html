@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b6cff" />
+  <title>Galeria · RCO Lavagens Auto</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body class="theme-auto layout">
+  <header class="site-header">
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-controls="drawer" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="brand" href="index.html" aria-label="RCO Lavagens Auto">
+      <img src="assets/img/logo.svg" alt="RCO Lavagens Auto" />
+      <span>RCO Lavagens Auto</span>
+    </a>
+    <nav class="nav desktop"><a href="index.html">Início</a><a href="servicos.html">Serviços</a><a href="galeria.html">Galeria</a><a href="contacto.html" class="btn">Contacto</a></nav>
+    <label class="switch" title="Alternar tema">
+      <input type="checkbox" id="themeSwitch" aria-label="Alternar tema">
+      <span class="slider">
+        <span class="i sun" aria-hidden="true">☀️</span>
+        <span class="i moon" aria-hidden="true">🌙</span>
+      </span>
+      <span class="switch-label" aria-hidden="true">Tema</span>
+    </label>
+  </header>
+  <main class="site-main">
+    <section class="page-hero small">
+      <h1>Galeria</h1>
+      <p>Toca nas imagens para ampliar. Usa ◀ ▶ ou desliza no telemóvel.</p>
+    </section>
+    <section class="gallery-grid">
+      <img data-gallery src="assets/img/gal1.jpg" alt="Trabalho 1" />
+      <img data-gallery src="assets/img/gal2.jpg" alt="Trabalho 2" />
+      <img data-gallery src="assets/img/gal3.jpg" alt="Trabalho 3" />
+      <img data-gallery src="assets/img/gal4.jpg" alt="Trabalho 4" />
+      <img data-gallery src="assets/img/gal5.jpg" alt="Trabalho 5" />
+      <img data-gallery src="assets/img/gal6.jpg" alt="Trabalho 6" />
+      <img data-gallery src="assets/img/gal7.jpg" alt="Polimento de faróis" />
+      <img data-gallery src="assets/img/gal8.jpg" alt="Troca de pastilhas" />
+    </section>
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lb-close" aria-label="Fechar">✕</button>
+      <button class="lb-prev" aria-label="Anterior">‹</button>
+      <img class="lb-img" alt="" />
+      <button class="lb-next" aria-label="Seguinte">›</button>
+    </div>
+  </main>
+<footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <h4>Contactos</h4>
+        <ul>
+          <li>📞 <a href="tel:+351913066636">+351 913 066 636</a></li>
+          <li>📍 Estrada Nacional 8, km 126, Aljubarrota</li>
+          <li>🕘 Seg–Sáb: 9h–19h</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Links rápidos</h4>
+        <ul>
+          <li></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="galeria.html">Antes & Depois</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-cta">
+        <h4>Pede orçamento</h4>
+        <p>Responde­mos rápido por WhatsApp.</p>
+        <a class="btn btn-outline" href="https://wa.me/351913066636" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </div>
+    </div>
+    <p class="copy">© <span id="year"></span> RCO Lavagens Auto · Feito com ❤️</p>
+  </footer>
+  <div class="bubbles" aria-hidden="true"></div>
+</body>
+</html>
