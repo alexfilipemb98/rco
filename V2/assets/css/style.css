@@ -134,21 +134,35 @@ img {
 }
 
 /* Burger + drawer */
-.burger {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  border: none;
-  background: transparent;
-  padding: 6px
+.burger{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  border:none;
+  background:transparent;
+  padding:6px;
+  cursor:pointer;
+  transition:transform .3s ease;
+  z-index:110; /* acima do drawer */
 }
 
-.burger span {
-  width: 20px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: .25s
+.burger span{
+  width:22px;
+  height:2px;
+  background:var(--text);
+  border-radius:1px;
+  transition:all .3s ease;
+}
+
+/* estado “ativo” (menu aberto) */
+.burger.open span:nth-child(1){
+  transform:translateY(7px) rotate(45deg);
+}
+.burger.open span:nth-child(2){
+  opacity:0;
+}
+.burger.open span:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg);
 }
 
 .drawer {

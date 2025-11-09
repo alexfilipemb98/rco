@@ -26,12 +26,14 @@
   const open = ()=>{
     drawer.classList.add('open');
     scrim.classList.add('show');
+    burger.classList.add('open');
     burger.setAttribute('aria-expanded','true');
   };
 
   const close = ()=>{
     drawer.classList.remove('open');
     scrim.classList.remove('show');
+     burger.classList.remove('open');
     burger.setAttribute('aria-expanded','false');
   };
 
