@@ -816,3 +816,53 @@ textarea {
   outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
+
+/* Cookie banner */
+.cookie-banner{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(15,23,42,.95);
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 22px;
+  z-index:300;
+  flex-wrap:wrap;
+  gap:10px;
+  box-shadow:0 -2px 8px rgba(0,0,0,.4);
+  font-size:.95rem;
+}
+
+.cookie-banner p{
+  margin:0;
+  flex:1;
+  min-width:220px;
+}
+
+.cookie-banner button{
+  background:var(--brand);
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  padding:8px 14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:background .2s;
+}
+
+.cookie-banner button:hover{
+  background:#0b6cffcc;
+}
+
+.cookie-banner.hide{
+  display:none;
+}
+
+.theme-light .cookie-banner{
+  background:#fff;
+  color:#111;
+  border-top:1px solid rgba(148,163,184,.4);
+}

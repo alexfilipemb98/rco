@@ -172,3 +172,21 @@
     if (Math.abs(dx) > 40) { dx > 0 ? show(i - 1) : show(i + 1); }
   }, { passive: true });
 })();
+
+// Cookie banner
+(function(){
+  const banner = document.getElementById('cookieBanner');
+  const btn = document.getElementById('acceptCookies');
+  if(!banner || !btn) return;
+
+  const accepted = localStorage.getItem('cookiesAccepted');
+  if(accepted){
+    banner.classList.add('hide');
+    return;
+  }
+
+  btn.addEventListener('click', ()=>{
+    localStorage.setItem('cookiesAccepted', 'true');
+    banner.classList.add('hide');
+  });
+})();
